@@ -1,0 +1,68 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes rev-gradient {
+	0% {
+		background-position: 100% 50%;
+	}
+	50% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+:root {
+  --primary-color: #1956FF;
+  --secondary-color: #42D7EB;
+  --tertiary-color: #FF23FF;
+}
+
+#heart-shape {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(-50deg, var(--primary-color), var(--tertiary-color), var(--secondary-color));
+  background-size: 400% 400%;
+  animation: rev-gradient 13s ease infinite;
+  border-bottom: 3px solid var(--secondary-color);
+  border-right: 3px solid var(--secondary-color);
+  transform: rotate(45deg);
+}
+
+#heart-shape:before {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: -15px;
+  content: '';
+  border-radius: 50%;
+  background: linear-gradient(-50deg, var(--primary-color), var(--tertiary-color), var(--secondary-color));
+  background-size: 400% 400%;
+  animation: gradient 13s ease infinite;
+  border-left: 3px solid var(--secondary-color);
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+#heart-shape:after {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: -15px;
+  content: '';
+  border-radius: 50%;
+  background: linear-gradient(-50deg, var(--primary-color), var(--tertiary-color), var(--secondary-color));
+  background-size: 400% 400%;
+  animation: gradient 13s ease infinite;
+  border-right: 3px solid var(--secondary-color);
+  border-top: 3px solid var(--secondary-color);
+}
