@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Bottom from "./components/Bottom";
 import AboutMe from "./pages/AboutMe";
 
-function App() {
+function App() {  
   return (
     <div style={{
       minHeight: '100vh',

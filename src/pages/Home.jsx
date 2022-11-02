@@ -1,4 +1,5 @@
 import { Container, Box, Heading } from "react-bulma-components";
+import MessageBoard from "../components/MessageBoard";
 
 export default function Home() {
     return (
@@ -23,6 +24,8 @@ export default function Home() {
                 Please leave a note, comment, or suggestion
                 in the message board below!
             </p>
+
+            <MessageBoard />
         </Container>
     );
 };
