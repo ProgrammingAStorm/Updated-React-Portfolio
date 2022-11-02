@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Home from "./pages/Home";
 import Bottom from "./components/Bottom";
+import AboutMe from "./pages/AboutMe";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="*" element={<Home />} />
+          <Route path="about" element={<AboutMe />}/>
         </Routes>
       </BrowserRouter>
 
