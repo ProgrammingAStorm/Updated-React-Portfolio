@@ -1,12 +1,21 @@
 import { database } from "./firebaseConfig";
-import { ref, set } from "firebase/database";
+import { ref, set, onValue, push } from "firebase/database";
 
 export function sendMessage(body = null) {
-    if(! body) {
+    if(!body) {
         return;
     }
 
-    set(ref(database, 'messages/'), {
+    const messages = ref(database, 'messages/');
+    const newMessage = push(messages);
+    set(newMessage, {
         body
     });
-}
+};
+
+export function getMessages() {
+    const messages = ref(database, 'messages/');
+    onValue(messages, (snapshot) => {
+        console.log(snapshot.val())
+    });
+};
