@@ -15,13 +15,21 @@ export default function Home() {
             <br />
 
             <p>
+                If you are seeing this paragraph, then I'm sure you can already tell that my portfolio is yet to be completed.
+                I ask for your forgiveness as, the more I continue to develop my portfolio, the more ambitious and/or elaborate it becomes.
+                I hope to complete it soon, but I still hope that you find what you see an impressive display of my abilities, nonetheless.
+                Thank you for understanding.
+            </p>
 
+            <br />
+
+            <p>
                 I hope you enjoy the toys that I have created
                 as much as I enjoyed creating them!
             </p>
 
             <p>
-                Please leave a note, comment, or suggestion
+                Please leave a note, comment, suggestion, joke, etc.
                 in the message board below!
             </p>
 
