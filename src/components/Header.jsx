@@ -33,7 +33,7 @@ export default function Header() {
                                 setProjects(!projects)
                             }}
                         >
-                            Projcts
+                            Projects
                         </Navbar.Link>
                         <Navbar.Dropdown>
                             <Navbar.Item href='/projects/bootcamp'>
