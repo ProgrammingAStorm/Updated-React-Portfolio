@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Banner from "./components/Banner";
 import Home from "./pages/Home";
 import Bottom from "./components/Bottom";
 import AboutMe from "./pages/AboutMe";
@@ -16,7 +15,6 @@ function App() {
       justifyContent: 'space-between'
     }}>
       <Header />
-      <Banner />
 
       <BrowserRouter>
         <Routes>
