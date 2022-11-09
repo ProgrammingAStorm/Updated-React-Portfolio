@@ -1,33 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Button, Container, Content, Form, Heading, Media } from "react-bulma-components";
-import { ref, getDatabase, push, set } from "firebase/database";
-import { useList } from 'react-firebase-hooks/database';
+import { ref, getDatabase, push, onValue } from "firebase/database";
 
 import { app } from "../utils/firebaseConfig";
-import { getMessages } from "../utils/firebaseUtils";
 
 export default function MessageBoard() {
     const [name, setName] = useState('')
     const [message, setMessage] = useState('');
     const [messageState, setMessageState] = useState('');
     const [noHelp, setNoHelp] = useState(true)
+    const [messages, setMessages] = useState([]);
 
-    const [snapshots, loading, error] = useList(ref(getDatabase(app), 'messages'))
+    const messageRef = ref(getDatabase(app), 'messages/');
+
+    useEffect(() => {
+        onValue(messageRef, (snapshot) => {
+            const x = [];
+
+            snapshot.forEach(s => {
+                x.push({
+                    name: s.val().name,
+                    message: s.val().message,
+                    key: s.key
+                })
+            })
+            setMessages(x)
+        })
+    }, [])
 
     function sendMessage(body = null) {
         if (!body) {
             return;
         }
 
-        const database = getDatabase(app)
-
-        const messages = ref(database, 'messages/');
-        const newMessage = push(messages);
-        set(newMessage, {
-            body
-        });
-
-        window.location.reload();
+        push(messageRef, body);
     };
 
     return (
@@ -35,19 +41,29 @@ export default function MessageBoard() {
             className="p-3"
         >
             <Box>
-                {error && <strong>Error: {error}</strong>}
-                {loading && <span>List: Loading...</span>}
-                {!loading && snapshots && (
-                    snapshots.map(s => {
+                {!messages && <span>Loading...</span>}
+                {messages.length === 0 &&
+                    <div>
+                        <Heading>
+                            The message board is empty!
+                        </Heading>
+
+                        <p>
+                            Thats actually good news for you.
+                            Now you get to be the first one to leave a message!
+                        </p>
+                    </div>}
+                {messages && (
+                    messages.map(m => {
                         return (
-                            <Media renderAs="article" key={s.key}>
+                            <Media renderAs="article" key={m.key}>
                                 <Media.Item>
                                     <Content>
                                         <Heading>
-                                            {s.val().body.name}
+                                            {m.name}
                                         </Heading>
                                         <p>
-                                            {s.val().body.message}
+                                            {m.message}
                                         </p>
                                     </Content>
                                 </Media.Item>
@@ -111,15 +127,16 @@ export default function MessageBoard() {
                                 value={message}
                                 onChange={(e) => {
                                     const value = e.target.value
+                                    
                                     if (!value) {
-                                        setMessageState('danger')
-                                        setNoHelp(false)
-                                        return;
+                                        setMessageState('danger');
+                                        setNoHelp(false);
+                                    } else {
+                                        setMessageState('');
+                                        setNoHelp(true);
                                     }
 
-                                    setMessageState('')
-                                    setNoHelp(true)
-                                    return setMessage(value);
+                                    setMessage(value);
                                 }}
                             />
                         </Form.Control>
