@@ -1,4 +1,4 @@
-import { Footer, Content, Button, Icon } from 'react-bulma-components'
+import { Footer, Content, Button, Icon, Heading } from 'react-bulma-components'
 import Song from './Song';
 
 export default function Bottom() {
@@ -11,13 +11,13 @@ export default function Bottom() {
                 flexDirection: 'column',
                 alignItems: 'center'
             }}>
-                <h1 style={{
+                <Heading style={{
                     display: 'flex'
                 }}>
                     Made with
 
                     <div className='ml-3' id="heart-shape" />
-                </h1>
+                </Heading>
 
                 <Button.Group>
                     <Button>
@@ -37,7 +37,7 @@ export default function Bottom() {
                     </Button>
                 </Button.Group>
 
-                <Song />
+                {/*<Song />*/}
             </Content>
         </Footer>
     );

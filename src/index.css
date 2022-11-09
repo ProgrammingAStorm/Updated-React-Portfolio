@@ -27,6 +27,10 @@
   --tertiary-color: #FF23FF;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #heart-shape {
   position: relative;
   width: 35px;

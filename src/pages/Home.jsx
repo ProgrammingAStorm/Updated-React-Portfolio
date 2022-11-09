@@ -1,4 +1,4 @@
-import { Container, Box, Heading } from "react-bulma-components";
+import { Container, Heading } from "react-bulma-components";
 import MessageBoard from "../components/MessageBoard";
 
 export default function Home() {
