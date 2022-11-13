@@ -14,9 +14,8 @@ export default function Home() {
                     <Heading>Welcome!</Heading>
 
                     <p>
-                        This is my portfolio. I hope you enjoy what you see.
-                        Everything you see is made by me with lots of love,
-                        and is hosted on my decentralized NFT domain.
+                        This is my portfolio. I hope you enjoy what you see,
+                        as it is all made with lots of love
                     </p>
 
                     <br />
