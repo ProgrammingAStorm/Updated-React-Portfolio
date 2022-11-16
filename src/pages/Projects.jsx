@@ -10,7 +10,7 @@ export default function Projects() {
     useEffect(() => {
         async function fetchData() {
             const octokit = new Octokit({
-                auth: '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'
+                auth: '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'
             });
 
             const response = await octokit.request("GET /users/{user}/repos", {
