@@ -1,5 +1,5 @@
 import { Footer, Content, Button, Icon, Heading } from 'react-bulma-components'
-import Song from './Song';
+//import Song from './Song';
 
 export default function Bottom() {
     return (
