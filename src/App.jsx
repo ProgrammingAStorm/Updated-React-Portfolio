@@ -6,8 +6,11 @@ import AboutMe from "./pages/AboutMe";
 import ContactMe from "./pages/ContactMe";
 import Construction from "./pages/Construction";
 import Projects from "./pages/Projects";
+import { useState } from "react";
 
 function App() {
+  const [section, setSection] = useState('home');
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -15,21 +18,25 @@ function App() {
       flexDirection: 'column',
       justifyContent: 'space-between'
     }}>
-      <Header />
+      <Header 
+        setSection={setSection}
+      />
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<Home />} />
-          <Route path="about" element={<AboutMe />} />
-          <Route path="contact" element={<ContactMe />} />
-          <Route path="projects">
-            <Route path="bootcamp" element={<Projects />} />
-            <Route path="personal" element={<Construction />} />
-            <Route path="toys" element={<Construction />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      {
+        section === 'home' && <Home />
+      }
+      {
+        section === 'contact' && <ContactMe />
+      }
+      {
+        section === 'about' && <AboutMe />
+      }
+      {
+        section === 'bootcamp' && <Projects />
+      }
+      {
+        section === 'construction' && <Construction />
+      }     
 
       <Bottom />
     </div>

@@ -36,7 +36,7 @@ export default function AboutMe() {
                     }
                 >
                     <Image
-                        src="/assets/imgs/1660255004624.jpeg"
+                        src="public/assets/imgs/1660255004624.jpeg"
                         rounded
                     //size={128}
                     />

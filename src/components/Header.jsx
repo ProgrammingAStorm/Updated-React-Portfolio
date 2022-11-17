@@ -1,7 +1,7 @@
 import { Navbar, Heading } from 'react-bulma-components';
 import { useState } from 'react';
 
-export default function Header() {
+export default function Header({ setSection }) {
     const [burger, setBurger] = useState(false);
     const [projects, setProjects] = useState(false);
 
@@ -12,14 +12,18 @@ export default function Header() {
                     <div id="heart-shape"></div>
                 </Navbar.Item>
 
-                <Navbar.Item href="/">
+                <Navbar.Item
+                    onClick={e => {
+                        setSection('home');
+                    }}
+                >
                     <Heading>
                         ProgrammingAStorm
                     </Heading>
                 </Navbar.Item>
 
-                <Navbar.Burger 
-                    onClick={ e => {
+                <Navbar.Burger
+                    onClick={e => {
                         setBurger(!burger)
                     }}
                 />
@@ -29,30 +33,53 @@ export default function Header() {
                 <Navbar.Container>
                     <Navbar.Item active={projects}>
                         <Navbar.Link
-                            onClick={ e => {
+                            onClick={e => {
                                 setProjects(!projects)
                             }}
                         >
                             Projects
                         </Navbar.Link>
                         <Navbar.Dropdown>
-                            <Navbar.Item href='/projects/bootcamp'>
+                            <Navbar.Item
+                                onClick={e => {
+                                    setSection('bootcamp');
+                                    setProjects(!projects)
+                                }}
+                            >
                                 Bootcamp
                             </Navbar.Item>
-                            <Navbar.Item href='/projects/personal'>
+                            <Navbar.Item
+                                onClick={e => {
+                                    setSection('construction');
+                                    setProjects(!projects)
+                                }}
+                            >
                                 Personal
                             </Navbar.Item>
-                            <Navbar.Item href='/projects/toys'>
+                            <Navbar.Item
+                                onClick={e => {
+                                    setSection('construction');
+                                    setProjects(!projects)
+                                }}
+                            >
                                 Toys
                             </Navbar.Item>
                         </Navbar.Dropdown>
                     </Navbar.Item>
 
-                    <Navbar.Item href='/about'>
+                    <Navbar.Item
+                        onClick={e => {
+                            setSection('about');
+                        }}
+                    >
                         About Me
                     </Navbar.Item>
 
-                    <Navbar.Item href='/contact'>
+                    <Navbar.Item
+                        onClick={e => {
+                            setSection('contact');
+                        }}
+                    >
                         Contact
                     </Navbar.Item>
                 </Navbar.Container>
