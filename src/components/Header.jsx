@@ -6,17 +6,24 @@ export default function Header({ setSection }) {
     const [projects, setProjects] = useState(false);
 
     return (
-        <Navbar active={burger}>
-            <Navbar.Brand>
-                <Navbar.Item className='p-5'>
-                    <div id="heart-shape"></div>
-                </Navbar.Item>
-
+        <Navbar
+            style={{
+                maxWidth: '100vw'
+            }}
+            active={burger}
+        >
+            <Navbar.Brand
+                className='mobile-flex-column'
+            >
                 <Navbar.Item
                     onClick={e => {
                         setSection('home');
                     }}
                 >
+                    <div className='p-5'>
+                        <div id="heart-shape"></div>
+                    </div>
+
                     <Heading>
                         ProgrammingAStorm
                     </Heading>
