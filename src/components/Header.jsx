@@ -8,7 +8,8 @@ export default function Header({ setSection }) {
     return (
         <Navbar
             style={{
-                maxWidth: '100vw'
+                minWidth: '100vw',
+                background: '#1956FF'
             }}
             active={burger}
         >
@@ -18,6 +19,8 @@ export default function Header({ setSection }) {
                 <Navbar.Item
                     onClick={e => {
                         setSection('home');
+                        setProjects(false)
+                        setBurger(false)
                     }}
                 >
                     <div className='p-5'>
@@ -38,7 +41,13 @@ export default function Header({ setSection }) {
 
             <Navbar.Menu>
                 <Navbar.Container>
-                    <Navbar.Item active={projects}>
+                    <Navbar.Item active={projects}
+
+                        onBlur={(e) => {
+                            setProjects(false)
+                            setBurger(false)
+                        }}
+                    >
                         <Navbar.Link
                             onClick={e => {
                                 setProjects(!projects)
@@ -46,11 +55,13 @@ export default function Header({ setSection }) {
                         >
                             Projects
                         </Navbar.Link>
-                        <Navbar.Dropdown>
+                        <Navbar.Dropdown
+                        >
                             <Navbar.Item
                                 onClick={e => {
                                     setSection('bootcamp');
-                                    setProjects(!projects)
+                                    setProjects(false)
+                                    setBurger(false)
                                 }}
                             >
                                 Bootcamp
@@ -58,18 +69,11 @@ export default function Header({ setSection }) {
                             <Navbar.Item
                                 onClick={e => {
                                     setSection('construction');
-                                    setProjects(!projects)
+                                    setProjects(false)
+                                    setBurger(false)
                                 }}
                             >
                                 Personal
-                            </Navbar.Item>
-                            <Navbar.Item
-                                onClick={e => {
-                                    setSection('construction');
-                                    setProjects(!projects)
-                                }}
-                            >
-                                Toys
                             </Navbar.Item>
                         </Navbar.Dropdown>
                     </Navbar.Item>
@@ -77,6 +81,8 @@ export default function Header({ setSection }) {
                     <Navbar.Item
                         onClick={e => {
                             setSection('about');
+                            setProjects(false)
+                            setBurger(false)
                         }}
                     >
                         About Me
@@ -85,6 +91,8 @@ export default function Header({ setSection }) {
                     <Navbar.Item
                         onClick={e => {
                             setSection('contact');
+                            setProjects(false)
+                            setBurger(false)
                         }}
                     >
                         Contact

@@ -40,10 +40,18 @@ export default function MessageBoard() {
         <Container
             className="p-3"
         >
-            <Box>
+            <Box
+                style={{
+                    background: '#6FFFE9'
+                }}
+            >
                 {!messages && <span>Loading...</span>}
                 {messages.length === 0 &&
-                    <div>
+                    <Box
+                        style={{
+                            background: '#6FFFE9'
+                        }}
+                    >
                         <Heading>
                             The message board is empty!
                         </Heading>
@@ -52,11 +60,14 @@ export default function MessageBoard() {
                             Thats actually good news for you.
                             Now you get to be the first one to leave a message!
                         </p>
-                    </div>}
+                    </Box>}
                 {messages && (
                     messages.map(m => {
                         return (
-                            <Media renderAs="article" key={m.key}>
+                            <Media
+                                renderAs="article"
+                                key={m.key}
+                            >
                                 <Media.Item>
                                     <Content>
                                         <Heading>
@@ -73,7 +84,11 @@ export default function MessageBoard() {
                 )}
             </Box>
 
-            <Box>
+            <Box
+                style={{
+                    background: '#6FFFE9'
+                }}
+            >
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
@@ -127,7 +142,7 @@ export default function MessageBoard() {
                                 value={message}
                                 onChange={(e) => {
                                     const value = e.target.value
-                                    
+
                                     if (!value) {
                                         setMessageState('danger');
                                         setNoHelp(false);

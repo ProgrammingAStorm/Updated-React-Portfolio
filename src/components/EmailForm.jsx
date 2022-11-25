@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Button, Form } from "react-bulma-components";
+import { Button, Form, Box } from "react-bulma-components";
 import emailjs from '@emailjs/browser';
 
 export default function EmailForm() {
@@ -27,159 +27,165 @@ export default function EmailForm() {
         setMessage('');
         setEmail('');
         setClosing('');
-        setSignature('');            
+        setSignature('');
     };
 
     return (
-        <form ref={form} onSubmit={sendEmail}>
-            <Form.Field>
-                <Form.Label>
-                    Subject
-                </Form.Label>
-                <Form.Control>
-                    <Form.Input
-                        name="subject"
-                        value={subject}
-                        placeholder={'Job Offer For You!'}
-                        onChange={
-                            (e) => {
-                                setSubject(e.target.value)
-                            }
-                        }
-                    />
-                </Form.Control>
-            </Form.Field>
-
-            <Form.Field>
-                <p>
-                    Hello Mark,
-                </p>
-
-                <br />
-
-                <p>
-                    My name is
-                </p>
-
-                <Form.Control>
-                    <Form.Input
-                        name="name"
-                        value={name}
-                        placeholder="Billy Bob,"
-                        onChange={
-                            (e) => {
-                                setName(e.target.value)
-                            }
-                        }
-                    />
-                </Form.Control>
-            </Form.Field>
-
-            <Form.Field>
-                <Form.Label>
-                    Message
-                </Form.Label>
-
-                <Form.Control>
-                    <Form.Textarea
-                        name="message"
-                        value={message}
-                        placeholder="and I have a killer job offer for you!"
-                        onChange={
-                            (e) => {
-                                setMessage(e.target.value)
-                            }
-                        }
-                    />
-                </Form.Control>
-            </Form.Field>
-
-            <Form.Field>
-                <p>
-                    You can email me back at
-                </p>
-
-                <Form.Control>
-                    <Form.Input 
-                        name="email"
-                        value={email}
-                        placeholder="recruiter@company.com"
-                        onChange={
-                            (e) => {
-                                setEmail(e.target.value);
-                            }
-                        }
-                    />
-                </Form.Control>
-            </Form.Field>
-
-            <Form.Field
-                className="is-flex is-justify-content-space-around"
-            >
-
-                <Form.Control
-                    className="m-1"
-                >
+        <Box
+            style={{
+                background: "#6FFFE9"
+            }}
+        >
+            <form ref={form} onSubmit={sendEmail}>
+                <Form.Field>
                     <Form.Label>
-                        Closing
+                        Subject
+                    </Form.Label>
+                    <Form.Control>
+                        <Form.Input
+                            name="subject"
+                            value={subject}
+                            placeholder={'Job Offer For You!'}
+                            onChange={
+                                (e) => {
+                                    setSubject(e.target.value)
+                                }
+                            }
+                        />
+                    </Form.Control>
+                </Form.Field>
+
+                <Form.Field>
+                    <p>
+                        Hello Mark,
+                    </p>
+
+                    <br />
+
+                    <p>
+                        My name is
+                    </p>
+
+                    <Form.Control>
+                        <Form.Input
+                            name="name"
+                            value={name}
+                            placeholder="Billy Bob,"
+                            onChange={
+                                (e) => {
+                                    setName(e.target.value)
+                                }
+                            }
+                        />
+                    </Form.Control>
+                </Form.Field>
+
+                <Form.Field>
+                    <Form.Label>
+                        Message
                     </Form.Label>
 
-                    <Form.Input
-                        name="closing"
-                        value={closing}
-                        placeholder={'Yours Truly,'}
-                        onChange={
-                            (e) => {
-                                setClosing(e.target.value)
+                    <Form.Control>
+                        <Form.Textarea
+                            name="message"
+                            value={message}
+                            placeholder="and I have a killer job offer for you!"
+                            onChange={
+                                (e) => {
+                                    setMessage(e.target.value)
+                                }
                             }
-                        }
-                    />
-                </Form.Control>
+                        />
+                    </Form.Control>
+                </Form.Field>
 
+                <Form.Field>
+                    <p>
+                        You can email me back at
+                    </p>
 
-                <Form.Control
-                    className="m-1"
-                >
-                    <Form.Label>
-                        Signature
-                    </Form.Label>
-
-                    <Form.Input
-                        name="signature"
-                        value={signature}
-                        placeholder={'Billy'}
-                        onChange={
-                            (e) => {
-                                setSignature(e.target.value)
+                    <Form.Control>
+                        <Form.Input
+                            name="email"
+                            value={email}
+                            placeholder="recruiter@company.com"
+                            onChange={
+                                (e) => {
+                                    setEmail(e.target.value);
+                                }
                             }
-                        }
-                    />
-                </Form.Control>
-            </Form.Field>
+                        />
+                    </Form.Control>
+                </Form.Field>
 
-            <Form.Field>
-                <Form.Control
+                <Form.Field
                     className="is-flex is-justify-content-space-around"
                 >
-                    <Button
-                        color={'success'}
-                        type='submit'
-                    >
-                        Submit
-                    </Button>
 
-                    <Button
-                        color={'danger'}
+                    <Form.Control
+                        className="m-1"
                     >
-                        Clear
-                    </Button>
-                </Form.Control>
-            </Form.Field>
+                        <Form.Label>
+                            Closing
+                        </Form.Label>
 
-            <p>
-                I would just like to note that the lack of input validation is intentional.
-                If you would like to send me a completely empty email for no reason, then please feel free to do so.
-            </p>
-        </form>
+                        <Form.Input
+                            name="closing"
+                            value={closing}
+                            placeholder={'Yours Truly,'}
+                            onChange={
+                                (e) => {
+                                    setClosing(e.target.value)
+                                }
+                            }
+                        />
+                    </Form.Control>
+
+
+                    <Form.Control
+                        className="m-1"
+                    >
+                        <Form.Label>
+                            Signature
+                        </Form.Label>
+
+                        <Form.Input
+                            name="signature"
+                            value={signature}
+                            placeholder={'Billy'}
+                            onChange={
+                                (e) => {
+                                    setSignature(e.target.value)
+                                }
+                            }
+                        />
+                    </Form.Control>
+                </Form.Field>
+
+                <Form.Field>
+                    <Form.Control
+                        className="is-flex is-justify-content-space-around"
+                    >
+                        <Button
+                            color={'success'}
+                            type='submit'
+                        >
+                            Submit
+                        </Button>
+
+                        <Button
+                            color={'danger'}
+                        >
+                            Clear
+                        </Button>
+                    </Form.Control>
+                </Form.Field>
+
+                <p>
+                    I would just like to note that the lack of input validation is intentional.
+                    If you would like to send me a completely empty email for no reason, then please feel free to do so.
+                </p>
+            </form>
+        </Box>
     );
 };

@@ -23,8 +23,8 @@
 
 :root {
   --primary-color: #1956FF;
-  --secondary-color: #42D7EB;
-  --tertiary-color: #FF23FF;
+  --secondary-color: #FF23FF;
+  --tertiary-color: #0B132B;
 }
 
 body {
@@ -33,42 +33,42 @@ body {
 
 #heart-shape {
   position: relative;
-  width: 35px;
-  height: 35px;
-  background: linear-gradient(-50deg, var(--primary-color), var(--tertiary-color), var(--secondary-color));
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(-50deg, var(--primary-color), var(--tertiary-color), var(--secondary-color), #5BC0BE, #6FFFE9);
   background-size: 400% 400%;
   animation: rev-gradient 13s ease infinite;
-  border-bottom: 3px solid var(--secondary-color);
-  border-right: 3px solid var(--secondary-color);
+  border-bottom: 3px solid #6FFFE9;
+  border-right: 3px solid #6FFFE9;
   transform: rotate(45deg);
 }
 
 #heart-shape:before {
   position: absolute;
-  width: 35px;
-  height: 35px;
+  width: 2rem;
+  height: 2rem;
   left: -15px;
   content: '';
   border-radius: 50%;
-  background: linear-gradient(-50deg, var(--primary-color), var(--tertiary-color), var(--secondary-color));
+  background: linear-gradient(-50deg, var(--primary-color), var(--tertiary-color), var(--secondary-color), #5BC0BE, #6FFFE9);
   background-size: 400% 400%;
   animation: gradient 13s ease infinite;
-  border-left: 3px solid var(--secondary-color);
-  border-bottom: 3px solid var(--secondary-color);
+  border-left: 3px solid #6FFFE9;
+  border-bottom: 3px solid #6FFFE9;
 }
 
 #heart-shape:after {
   position: absolute;
-  width: 35px;
-  height: 35px;
+  width: 2rem;
+  height: 2rem;
   top: -15px;
   content: '';
   border-radius: 50%;
-  background: linear-gradient(-50deg, var(--primary-color), var(--tertiary-color), var(--secondary-color));
+  background: linear-gradient(-50deg, var(--primary-color), var(--tertiary-color), var(--secondary-color), #5BC0BE, #6FFFE9);
   background-size: 400% 400%;
   animation: gradient 13s ease infinite;
-  border-right: 3px solid var(--secondary-color);
-  border-top: 3px solid var(--secondary-color);
+  border-right: 3px solid #6FFFE9;
+  border-top: 3px solid #6FFFE9;
 }
 
 @media screen and (max-width: 469px) {

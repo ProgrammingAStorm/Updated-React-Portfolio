@@ -1,10 +1,8 @@
 import { Columns, Container, Box, Content, Heading, Button, Section } from "react-bulma-components";
 import { Octokit } from "octokit";
 import { useEffect, useState } from "react";
-//import { useList } from "react-firebase-hooks/database";
 
 export default function Projects() {
-    //const [snapshots, loading, error] = useList()
     const [repos, setRepos] = useState(null);
 
     useEffect(() => {
@@ -32,37 +30,49 @@ export default function Projects() {
 
     return (
         <Container
-            className="is-flex"
+            className="is-flex p-5"
             flexDirection="column"
         >
             <Section>
-                <Heading
-                    size={2}
+                <Box
+                    style={{
+                        background: '#5BC0BE'
+                    }}
                 >
-                    Notice!
-                </Heading>
-
-                <Content>
-                    <p>
-                        The current implamentation of projects in the page is simple
-                        and obtuse for the sake of getting this site done in a timely manner.
-                        When the time comes, it will be redone in a more elegant manner.
-                    </p>
-
-                    <Heading
-                        size={4}
+                    <Box
+                        style={{
+                            background: '#6FFFE9'
+                        }}
                     >
-                        Also!
-                    </Heading>
+                        <Heading
+                            size={2}
+                        >
+                            Notice!
+                        </Heading>
 
-                    <p>
-                        Some of projects are hosted on github-pages and their deployment can be
-                        accessed from their respective repositories.
-                        However, some projects were hosted on free Heroku dynos,
-                        and a more permanent solution for them to be hosted on has yet to be implemented.
-                        I apologize for the inconvenience.
-                    </p>
-                </Content>
+                        <Content>
+                            <p>
+                                The current implamentation of projects in the page is simple
+                                and obtuse for the sake of getting this site done in a timely manner.
+                                When the time comes, it will be redone in a more elegant manner.
+                            </p>
+
+                            <Heading
+                                size={4}
+                            >
+                                Also!
+                            </Heading>
+
+                            <p>
+                                Some of projects are hosted on github-pages and their deployment can be
+                                accessed from their respective repositories.
+                                However, some projects were hosted on free Heroku dynos,
+                                and a more permanent solution for them to be hosted on has yet to be implemented.
+                                I apologize for the inconvenience.
+                            </p>
+                        </Content>
+                    </Box>
+                </Box>
             </Section>
 
             {repos ? (
@@ -77,26 +87,36 @@ export default function Projects() {
                                     size={'one-quarter'}
                                     key={repo.id}
                                 >
-                                    <Box>
-                                        <Heading
-                                            size={6}
+                                    <Box
+                                        style={{
+                                            background: '#5BC0BE'
+                                        }}
+                                    >
+                                        <Box
+                                            style={{
+                                                background: '#6FFFE9'
+                                            }}
                                         >
-                                            {repo.name}
-                                        </Heading>
+                                            <Heading
+                                                size={6}
+                                            >
+                                                {repo.name}
+                                            </Heading>
 
-                                        <Content>
-                                            <p>
-                                                {repo.description}
-                                            </p>
-                                        </Content>
+                                            <Content>
+                                                <p>
+                                                    {repo.description}
+                                                </p>
+                                            </Content>
 
-                                        <Button
-                                            renderAs="a"
-                                            href={repo.html_url}
-                                            target="_blank"
-                                        >
-                                            Repository
-                                        </Button>
+                                            <Button
+                                                renderAs="a"
+                                                href={repo.html_url}
+                                                target="_blank"
+                                            >
+                                                Repository
+                                            </Button>
+                                        </Box>
                                     </Box>
                                 </Columns.Column>
                             );
@@ -109,7 +129,19 @@ export default function Projects() {
                     alignItems="center"
                 >
                     <Heading>
-                        Now Loading...
+                        <Box
+                            style={{
+                                background: '#5BC0BE'
+                            }}
+                        >
+                            <Box
+                                style={{
+                                    background: '#6FFFE9'
+                                }}
+                            >
+                                Now Loading...
+                            </Box>
+                        </Box>
                     </Heading>
                 </Content>
             )}
