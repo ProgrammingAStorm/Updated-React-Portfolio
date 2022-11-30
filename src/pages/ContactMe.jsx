@@ -44,7 +44,9 @@ export default function ContactMe() {
                                 >
 
 
-                                    <ul>
+                                    <ul
+                                        className="m-0"
+                                    >
                                         <li
                                             className="is-flex is-justify-content-center"
                                         >

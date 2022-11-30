@@ -77,3 +77,7 @@ body {
     align-items: center;
   }
 }
+
+.box{
+  padding: 0.80rem;
+}

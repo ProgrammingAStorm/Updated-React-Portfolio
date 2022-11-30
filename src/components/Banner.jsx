@@ -9,7 +9,7 @@ export default function Banner() {
         }}>
             <Hero.Body>
                 <Container
-                    className='is-flex is-justify-content-space-between'
+                    className='is-flex is-justify-content-space-between mobile-flex-column'
                 >
                     <div>
                         <Heading>
@@ -24,7 +24,7 @@ export default function Banner() {
                     </div>
 
                     <Content
-                        className='is-flex is-flex-direction-column is-align-items-center px-2'
+                        className='is-flex is-flex-direction-column is-align-items-center px-2 mt-5'
                         style={{
                             minWidth: '15vw',
                             minHeight: '15vh'
