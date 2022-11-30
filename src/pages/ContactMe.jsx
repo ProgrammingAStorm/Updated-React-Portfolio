@@ -9,18 +9,25 @@ export default function ContactMe() {
             <Columns
                 style={{
                     width: '85vw',
-                    margin: '1rem'
+                    margin: '0'
                 }}
             >
                 <Columns.Column
                     size={'half'}
+                    style={{
+                        padding: '1vw'
+                    }}
                 >
                     <Box
                         style={{
                             background: '#5BC0BE'
                         }}
                     >
-                        <address>
+                        <address
+                            style={{
+                                fontSize: 'clamp(1em, 1.5vw, 2rem)'
+                            }}
+                        >
                             <Heading
                                 className="is-flex"
                             >
@@ -48,9 +55,11 @@ export default function ContactMe() {
                                         className="m-0"
                                     >
                                         <li
-                                            className="is-flex is-justify-content-center"
+                                            className="is-flex is-justify-content-center mobile-flex-column mb-4"
                                         >
-                                            <p>
+                                            <p
+                                                className="m-0"
+                                            >
                                                 Email:
                                             </p>
 
@@ -107,6 +116,9 @@ export default function ContactMe() {
 
                 <Columns.Column
                     size={'half'}
+                    style={{
+                        padding: '1vw'
+                    }}
                 >
                     <Box
                         style={{

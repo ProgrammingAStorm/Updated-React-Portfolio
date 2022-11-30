@@ -4,6 +4,10 @@ export default function AboutMe() {
     return (
         <Container
             className="p-3"
+
+            style={{
+                fontSize: 'clamp(.75em, 1.5vw, 2rem)'
+            }}
         >
             <Box
                 style={{

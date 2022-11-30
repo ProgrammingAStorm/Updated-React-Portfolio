@@ -32,6 +32,10 @@ export default function Projects() {
         <Container
             className="is-flex p-5"
             flexDirection="column"
+
+            style={{
+                fontSize: 'clamp(.75em, 1.5vw, 2rem)' 
+            }}
         >
             <Section>
                 <Box

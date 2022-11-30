@@ -4,6 +4,10 @@ export default function Construction() {
     return (
         <Container
             className="is-flex is-align-items-center"
+
+            style={{
+                fontSize: 'clamp(.75em, 1.5vw, 2rem)' 
+            }}
         >
             <Box
                 style={{

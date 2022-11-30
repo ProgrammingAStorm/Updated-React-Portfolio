@@ -8,6 +8,7 @@ export default function Header({ setSection }) {
     return (
         <Navbar
             style={{
+                fontSize: 'clamp(.75em, 1.5vw, 2rem)',
                 minWidth: '100vw',
                 background: '#1956FF'
             }}
@@ -27,7 +28,11 @@ export default function Header({ setSection }) {
                         <div id="heart-shape"></div>
                     </div>
 
-                    <Heading>
+                    <Heading
+                        style={{
+                            fontSize: 'clamp(1.75sem, 2vw, 3rem)'
+                        }}
+                    >
                         ProgrammingAStorm
                     </Heading>
                 </Navbar.Item>
